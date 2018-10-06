@@ -2,6 +2,10 @@ export const ASSETS = {
     image: {
         chicken: 'https://cldup.com/rz25KCxIW5.png',
     },
+    text: {
+        // stage1_1: '@/assets/map1.txt',
+        stage1_1:'https://cldup.com/HGBOKOOfN4.txt'
+    },
     spritesheet: {
         chickenSS: {
             frame: {

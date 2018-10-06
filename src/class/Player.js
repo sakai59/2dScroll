@@ -7,9 +7,9 @@ export default phina.define('Player', {
     superClass: 'Sprite',
     init() {
         this.superInit('chicken', 40, 48)
-        
-        this.maxvx = 8
-        
+
+        this.MAXVX = 8
+
         this.ax = 2
         this.vx = 0
         this.vy = 0
@@ -39,7 +39,7 @@ export default phina.define('Player', {
         if (!this.jFlag) {
             if (key.getKey('z')) {
                 this.jFlag = true
-                this.vy = -10
+                this.vy = -15
             }
         }
     },
@@ -61,19 +61,20 @@ export default phina.define('Player', {
     movePos() {
         // 慣性,最高速
         if (this.vx > 0) {
-            this.vx = Math.min(Math.abs(this.vx), this.maxvx)
+            this.vx = Math.min(Math.abs(this.vx), this.MAXVX)
             this.vx -= this.ax / 4
         }
         if (this.vx < 0) {
-            this.vx = Math.min(Math.abs(this.vx), this.maxvx) * -1
+            this.vx = Math.min(Math.abs(this.vx), this.MAXVX) * -1
             this.vx += this.ax / 4
         }
-        if (this.jFlag) {
-            //vyは上昇時はマイナス、下降時はプラス
-            this.vy += 1
-            // this.y += this.vy
-        }
+        this.vy += 1
 
+        // this.x += this.vx
+        // this.y += this.vy
+    },
+    move() {
+        // 移動距離を入れる
         this.x += this.vx
         this.y += this.vy
     },
@@ -84,5 +85,6 @@ export default phina.define('Player', {
 
         this.checkScreenIn()
         this.movePos()
+
     },
 })

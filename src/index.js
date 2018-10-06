@@ -13,5 +13,6 @@ phina.main(function() {
         height: SCREEN_HEIGHT,
         assets: ASSETS,
     })
+    app.enableStats() //fpsの表示
     app.run()
 })
