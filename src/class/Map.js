@@ -17,6 +17,8 @@ export default phina.define('Map', {
     },
     loading: function(text, stage, player, nextx, nexty) {
         this.text = AssetManager.get(text, stage).data
+        console.log(this.text);
+        
         var ary = this.text.split('\n')
         var map = []
         for (var i = 0; i < ary.length; i++) {
