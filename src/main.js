@@ -18,11 +18,14 @@ phina.define('MainScene', {
 
         this.blockGroup = DisplayElement().addChildTo(this)
         this.map = Map(this.blockGroup)
-        this.map.loading('text', 'stage1_1')
+        this.map.loading('text','stage1_1',this.player,900,200);
+
     },
     update() {
         this.collision(this.playerGroup, this.blockGroup)
-        this.player.move()
+        // this.player.move()
+        this.map.move(this.player,this.blockGroup);
+
     },
     collision(attacks, defences) {
         attacks.children.forEach(attack => {

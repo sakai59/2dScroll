@@ -4,7 +4,23 @@ export const ASSETS = {
     },
     text: {
         // stage1_1: '@/assets/map1.txt',
-        stage1_1:'https://cldup.com/HGBOKOOfN4.txt'
+        stage1_1:'
+        BBBBBBBBBBBBBBBBBBBB
+        B                  B
+        B                  B
+        B         BBBBBBBBBB
+        B    B             B
+        B                  B
+        B               BBBB
+        B                  B
+        B      B           B
+        B                  B
+        B  B              BB
+        B                BBB
+        BB    BBBBBB    BBBB
+        B              BBBBB
+        BBBBBBBBBBBBBBBBBBBB
+        '
     },
     spritesheet: {
         chickenSS: {

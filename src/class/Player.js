@@ -37,7 +37,7 @@ export default phina.define('Player', {
     },
     jump(key) {
         if (!this.jFlag) {
-            if (key.getKey('z')) {
+            if (key.getKey('space')) {
                 this.jFlag = true
                 this.vy = -15
             }
