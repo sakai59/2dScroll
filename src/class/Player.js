@@ -78,6 +78,7 @@ export default phina.define('Player', {
         this.x += this.vx
         this.y += this.vy
     },
+    hit(attack) {this.vx = 0 },
     update(app) {
         this.key = app.keyboard
         this.changeDirection(this.key)
@@ -87,4 +88,8 @@ export default phina.define('Player', {
         this.movePos()
 
     },
+    down() {
+        console.log('damage');
+        
+    }
 })

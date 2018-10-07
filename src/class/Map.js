@@ -2,16 +2,19 @@ import phina from 'phina.js'
 phina.globalize()
 import Block from '@/class/Block'
 import Coin from '@/class/Coin';
+import Enemy from '@/class/Enemy';
+
 import { SCREEN_WIDTH, SCREEN_HEIGHT } from '@/assets/CONSTANT'
 
 var GS = 32
 
 export default phina.define('Map', {
     superClass: 'RectangleShape',
-    init: function(blockGroup,coinGroup) {
+    init: function(blockGroup,coinGroup,enemyGroup) {
         this.superInit()
         this.blockGroup = blockGroup
         this.coinGroup = coinGroup
+        this.enemyGroup = enemyGroup
 
         this.mapWidth = null
         this.mapHeight = null
@@ -39,6 +42,12 @@ export default phina.define('Map', {
                         .setPosition(j * GS, i * GS)
                         .addChildTo(this.coinGroup)
                 }
+                if (map[i][j] === 'k') {
+                    Enemy()
+                        .setPosition(j * GS, i * GS)
+                        .addChildTo(this.enemyGroup)
+                }
+                
 
             }
         }
@@ -84,6 +93,11 @@ export default phina.define('Map', {
         this.coinGroup.children.some(function(coin) {
             coin.x += -offset.vx
             coin.y += -offset.vy
+        })
+        this.enemyGroup.children.some(function (enemy) {
+            enemy.move()
+            enemy.x += -offset.vx
+            enemy.y += -offset.vy
         })
     },
     calcOffset: function(player) {
