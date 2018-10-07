@@ -5,16 +5,16 @@
  B                                                          B
  B                                                          B
  B                                                          B
- B       oo                                                 B
+ B       oo                                             k   B
  B     BBBBB                                     BBBBBBBBBBBB
- B                                                          B
+ B                  k                    B k B              B
  B                  ooo                  BBBBBBBB           B
- B                               BBB                        B
+ B             k                 BBB                        B
  B                                                          B
  B                        BBB                               B
  B                  BBB                            B        B
  B                                                          B
  B    BBB     BBB            ooo          BoooooooooooooooooB
  B                        BBBBBBBBBB      BoooooooooooooooooB
- B                                        B                 B
+ B       k                                B            k    B
  BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB

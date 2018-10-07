@@ -4,8 +4,9 @@ export const ASSETS = {
     },
     text: {
         // stage1_1: '@/assets/map1.txt',
-        stage1_1:'https://cldup.com/KTURKWzB0x.txt'
-        // stage1_1:'https://rawgit.com/sakai59/2dScroll/master/src/assets/map1.txt'
+        // stage1_1:'https://cldup.com/KTURKWzB0x.txt',
+        stage1_1:'https://rawgit.com/sakai59/2dScroll/master/src/assets/map1.txt',
+        stage1_2:'https://rawgit.com/sakai59/2dScroll/master/src/assets/map2.txt'
     },
     spritesheet: {
         chickenSS: {
