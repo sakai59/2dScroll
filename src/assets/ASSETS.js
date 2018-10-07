@@ -1,12 +1,16 @@
 export const ASSETS = {
     image: {
         chicken: 'https://cldup.com/rz25KCxIW5.png',
+        coin:'https://raw.githubusercontent.com/phinajs/phina.js/develop/assets/images/tomapiko.png'
     },
     text: {
         // stage1_1: '@/assets/map1.txt',
         // stage1_1:'https://cldup.com/KTURKWzB0x.txt',
         stage1_1:'https://rawgit.com/sakai59/2dScroll/master/src/assets/map1.txt',
-        stage1_2:'https://rawgit.com/sakai59/2dScroll/master/src/assets/map2.txt'
+        stage1_2: 'https://rawgit.com/sakai59/2dScroll/master/src/assets/map2.txt',
+        stage_coin: 'https://rawgit.com/sakai59/2dScroll/master/src/assets/map_coin.txt',
+        stage_kuri: 'https://rawgit.com/sakai59/2dScroll/master/src/assets/map_kuri.txt',
+        stage_coinblock:'https://rawgit.com/sakai59/2dScroll/master/src/assets/map_coinblock.txt'
     },
     spritesheet: {
         chickenSS: {

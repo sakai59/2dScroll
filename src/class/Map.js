@@ -1,15 +1,18 @@
 import phina from 'phina.js'
 phina.globalize()
 import Block from '@/class/Block'
+import Coin from '@/class/Coin';
 import { SCREEN_WIDTH, SCREEN_HEIGHT } from '@/assets/CONSTANT'
 
 var GS = 32
 
 export default phina.define('Map', {
     superClass: 'RectangleShape',
-    init: function(blockGroup) {
+    init: function(blockGroup,coinGroup) {
         this.superInit()
         this.blockGroup = blockGroup
+        this.coinGroup = coinGroup
+
         this.mapWidth = null
         this.mapHeight = null
         this.absdisX = 0
@@ -17,7 +20,6 @@ export default phina.define('Map', {
     },
     loading: function(text, stage, player, nextx, nexty) {
         this.text = AssetManager.get(text, stage).data
-        console.log(this.text);
         
         var ary = this.text.split('\n')
         var map = []
@@ -32,6 +34,12 @@ export default phina.define('Map', {
                         .setPosition(j * GS, i * GS)
                         .addChildTo(this.blockGroup)
                 }
+                if (map[i][j] === 'o') {
+                    Coin()
+                        .setPosition(j * GS, i * GS)
+                        .addChildTo(this.coinGroup)
+                }
+
             }
         }
 
@@ -43,7 +51,7 @@ export default phina.define('Map', {
         player.x = nextx
         player.y = nexty
     },
-    move(player, blockGroup) {
+    move(player) {
         player.move()
         var offset = this.calcOffset(player)
 
@@ -69,9 +77,13 @@ export default phina.define('Map', {
 
         player.x += -offset.vx
         player.y += -offset.vy
-        blockGroup.children.some(function(block) {
+        this.blockGroup.children.some(function(block) {
             block.x += -offset.vx
             block.y += -offset.vy
+        })
+        this.coinGroup.children.some(function(coin) {
+            coin.x += -offset.vx
+            coin.y += -offset.vy
         })
     },
     calcOffset: function(player) {

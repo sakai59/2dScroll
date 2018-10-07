@@ -17,16 +17,27 @@ phina.define('MainScene', {
             .addChildTo(this.playerGroup)
 
         this.blockGroup = DisplayElement().addChildTo(this)
-        this.map = Map(this.blockGroup)
-        this.map.loading('text','stage1_1',this.player,900,200);
+        this.coinGroup = DisplayElement().addChildTo(this)
+        this.map = Map(this.blockGroup,this.coinGroup)
+        this.map.loading('text','stage_coin',this.player,900,200);
 
     },
     update() {
         this.collision(this.playerGroup, this.blockGroup)
+        this.getCoin(this.playerGroup, this.coinGroup)
         // this.player.move()
-        this.map.move(this.player,this.blockGroup);
+        this.map.move(this.player);
 
     },
+    getCoin(playerG, coinG) {
+        playerG.children.forEach(player => {
+            coinG.children.forEach(coin => {
+                if (Collision.testRectRect(player, coin)) {
+                    coin.hit()
+                }                
+            })
+        })
+     },
     collision(attacks, defences) {
         attacks.children.forEach(attack => {
             defences.children.forEach(defence => {
